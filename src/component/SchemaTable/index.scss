@@ -1,0 +1,150 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 5px;
+
+  thead {
+    width: calc( 100% - 1em )
+  }
+
+  thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    overflow: auto;
+    max-height: 80vh;
+  }
+
+  & th{
+    background-color: lightgray;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      position: absolute;
+      right: 0;
+      margin: 6px;
+    }
+  }
+
+  th,td{
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  td{
+    div{
+      text-overflow: ellipsis;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  & tbody{
+    & tr{
+      height: 50px;
+      &:hover{
+        background-color: #858585;
+      }
+    }
+  }
+
+  & tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+.ASC {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.DSC {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transition: 0.5s;
+}
+
+.tableTitle {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+// New style from reference
+.schema-table {
+  &__tbody {
+    overflow-x: hidden !important;
+    border-collapse: collapse;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__th-row {
+    overflow: hidden !important;
+  }
+
+  &__th {
+    overflow: hidden;
+    background-color: #eee;
+
+    &,
+    button {
+      font-weight: bold;
+      margin-top: 10px;
+      display: flex;
+    }
+
+    &--unsortable {
+      padding-left: 1rem;
+    }
+  }
+
+  &__td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-left: 8px;
+    align-items: center;
+    line-height: 40px;
+
+    &--odd {
+      background-color: #ddd;
+    }
+
+    &--even {
+      background-color: #fff;
+    }
+    &--selected {
+      background-color: #bbb;
+    }
+  }
+
+  &__search {
+    margin: 1rem;
+    padding-right: 1rem;
+
+    input {
+      width: 100%;
+      line-height: 20px;
+    }
+  }
+
+  &--clickable-rows .schema-table__td {
+    cursor: pointer;
+  }
+  overflow: hidden;
+}
