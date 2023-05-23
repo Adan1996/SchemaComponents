@@ -146,5 +146,8 @@ table {
   &--clickable-rows .schema-table__td {
     cursor: pointer;
   }
+  button {
+    border:1px solid transparent;
+  }
   overflow: hidden;
 }
