@@ -1,6 +1,6 @@
 # schema-table-component
 
-This component will render fields dynamically based on openApi schema JSON. Default field validation with ajv is also provided within this package.
+This component will render fields dynamically based on openApi schema JSON.
 
 # Install
 ```
@@ -34,7 +34,7 @@ const userSchema ={
 ```
 ```typescript jsx
     import React from 'react';
-    import { SchemaForm, IColumnConfig } from "schema-table-component";
+    import { SchemaTableComponent, IColumnConfig } from "schema-table-component";
 
     const config:{[keyName: string]: IColumnConfig} ={
         "id":{
@@ -45,11 +45,11 @@ const userSchema ={
         }
     }
     
-    const Form=()=>{
-        const [userDetail,setUserDetail]= useState();
+    const Table=()=>{
+        const [users, setUsers]= useState();
         
-        return <Table
-            data={servers || []}
+        return <SchemaTableComponent
+            data={users || []}
             schema={userSchema}
             width={window.innerWidth}
             height={window.innerHeight - 150}
