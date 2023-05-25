@@ -28,6 +28,7 @@ export interface ISchemaTableComponentProps<T> {
     height: number;
     customElement?: React.ReactNode;
     tableTitle?: string;
+    searchPlaceholder?: string;
 }
 
 export default function SchemaTableComponent<T>(props: ISchemaTableComponentProps<T>) {
@@ -47,6 +48,7 @@ export default function SchemaTableComponent<T>(props: ISchemaTableComponentProp
         style,
         customElement,
         tableTitle,
+        searchPlaceholder
     } = props;
     const [sortColumn, setSortColumn] = React.useState(
         defaultSortColumn as string
@@ -422,7 +424,7 @@ export default function SchemaTableComponent<T>(props: ISchemaTableComponentProp
                         <input
                             id={"input-filter"}
                             type="text"
-                            placeholder="Search..."
+                            placeholder={searchPlaceholder}
                             value={searchQuery}
                             onChange={onSearchChange}
                             autoFocus
